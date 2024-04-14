@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const File = new mongoose.Schema({
+const FileSchema = new mongoose.Schema({
   path: {
     type: String,
     required: true,
@@ -14,10 +14,10 @@ const File = new mongoose.Schema({
   lastModifiedAt: Date,
   downloads: {
     type: Number,
-    required: True,
     default: 0,
   },
 });
 
-mongoose.model("File", File);
-module.exports = File;
+const File = mongoose.model("File", FileSchema);
+
+export { File };

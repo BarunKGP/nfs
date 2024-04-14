@@ -1,3 +1,7 @@
+# Custom
+uploads/
+asyncPromiseQueue.js
+
 # Logs
 logs
 *.log

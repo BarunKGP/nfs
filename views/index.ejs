@@ -25,11 +25,21 @@
     <title>Document</title>
 </head>
 <body>
+    <% if (locals.fileLink != null) { %>
+        <div>
+            <h2 style="font-size: large; color: rebeccapurple;">Your file has been uploaded successfully!</h2>
+            <p>
+                Your files are available at 
+                <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
+            </p>
+        </div>
+
+    <% } %>
     <form action="/upload" method="post" enctype="multipart/form-data" display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: 0 auto;">
         <label for="file">File:</label >
-        <input type="file" id="'file" name="'file" required />
-        <label for="password">Password(optional):</label>
-        <input type="password" id="password" name="password" />
+        <input type="file" id="'file" name="file" placeholder="Select file" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Optional"/>
         <button style="grid-column: span 2; width: 3rem; margin: 0 auto; text-align: center;" type="Submit">Share</button>
     </form>
 </body>
